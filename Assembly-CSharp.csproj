@@ -62,6 +62,12 @@
   <ItemGroup>
     <Compile Include="Assets\02 Scripts\Character.cs" />
     <Compile Include="Assets\02 Scripts\HeadLaser.cs" />
+    <Compile Include="Assets\02 Scripts\Mob.cs" />
+    <Compile Include="Assets\02 Scripts\Player.cs" />
+    <Compile Include="Assets\02 Scripts\Skill_1.cs" />
+    <Compile Include="Assets\02 Scripts\ThirdPersonCamera.cs" />
+    <Compile Include="Assets\02 Scripts\Utility.cs" />
+    <Compile Include="Assets\02 Scripts\UtilityClass.cs" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Atents/Desktop/Porfolio Mario RPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
