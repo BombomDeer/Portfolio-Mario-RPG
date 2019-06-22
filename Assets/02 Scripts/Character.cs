@@ -6,6 +6,7 @@ using UnityEngine.AI;
 public class Character : MonoBehaviour
 {
     NavMeshAgent _navi;
+    public Animanager aniManager;
     public NavMeshAgent navi
     {
         get
@@ -15,6 +16,18 @@ public class Character : MonoBehaviour
             return _navi;
         }
     }
+
+    protected Animator _ani;
+    public Animator ani
+    {
+        get
+        {
+            if (_ani == null)
+                _ani = GetComponent<Animator>();
+            return _ani;
+        }
+    }
+    
 
     private void Awake()
     {
@@ -40,10 +53,10 @@ public class Character : MonoBehaviour
     {
 
     }
-
     virtual public void InitStart()
     {
-
+        aniManager = new Animanager();
+        aniManager.InitAniManager(ani);
     }
 
     virtual public void onEnable()
@@ -58,7 +71,7 @@ public class Character : MonoBehaviour
 
     virtual public void UpdateDo()
     {
-
+        aniManager.Update();
     }
 
     private void Update()

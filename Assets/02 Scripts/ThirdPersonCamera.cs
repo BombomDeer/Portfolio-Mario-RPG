@@ -12,6 +12,8 @@ public class ThirdPersonCamera : MonoBehaviour
     const float fZoomMin = 26;
     const float fZoomMax = 110;
 
+    [SerializeField] AnimationCurve cameraShakeCurve;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -49,6 +51,11 @@ public class ThirdPersonCamera : MonoBehaviour
             cur += fWheel*fWheelSpeed*-1;
             Camera.main.fieldOfView = Mathf.Clamp(cur, fZoomMin, fZoomMax);
         }
+    }
+
+    public void CameraShake()
+    {
+
     }
 
     // Update is called once per frame
