@@ -60,17 +60,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\02 Scripts\Animanager.cs" />
-    <Compile Include="Assets\02 Scripts\Character.cs" />
-    <Compile Include="Assets\02 Scripts\HeadLaser.cs" />
-    <Compile Include="Assets\02 Scripts\Mob.cs" />
-    <Compile Include="Assets\02 Scripts\Player.cs" />
-    <Compile Include="Assets\02 Scripts\Skill_1.cs" />
-    <Compile Include="Assets\02 Scripts\ThirdPersonCamera.cs" />
-    <Compile Include="Assets\02 Scripts\UIAni.cs" />
-    <Compile Include="Assets\02 Scripts\Utility.cs" />
-    <Compile Include="Assets\02 Scripts\UtilityClass.cs" />
-    <Compile Include="Assets\NewBehaviourScript.cs" />
+    <Compile Include="Assets\02 Scripts\BattleScripts\BattleCameraB.cs" />
+    <Compile Include="Assets\02 Scripts\BattleScripts\BattleManagerB.cs" />
+    <Compile Include="Assets\02 Scripts\BattleScripts\CharacterB.cs" />
+    <Compile Include="Assets\02 Scripts\BattleScripts\EnemyB.cs" />
+    <Compile Include="Assets\02 Scripts\BattleScripts\PlayerB.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\Animanager.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\Character.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\HeadLaser.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\Mob.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\Player.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\Skill_1.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\ThirdPersonCamera.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\UIAni.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\Utility.cs" />
+    <Compile Include="Assets\02 Scripts\UtilityScripts\ReturnGlobalPosition.cs" />
     <None Include="Assets\MonsterGroup1\TrollGiant\readMe.txt" />
     <Reference Include="Unity.TextMeshPro.Editor">
       <HintPath>C:/Users/Atents/Desktop/Porfolio Mario RPG/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
