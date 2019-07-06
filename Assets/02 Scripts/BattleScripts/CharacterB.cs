@@ -5,53 +5,26 @@ using UnityEngine;
 public class CharacterB : MonoBehaviour
 {
     int HP;
+    BattleManagerB battleManager;
 
-    private void Awake()
+    virtual protected void Start()
     {
-
+        
     }
 
-    private void Start()
+    virtual protected void Update()
     {
-        InitStart();
+        
     }
 
-    private void OnEnable()
+    public void Init(BattleManagerB _battleManager)
     {
-        onEnable();
-    }
-    private void OnDisable()
-    {
-        onDisable();
+        battleManager = _battleManager;
     }
 
-    virtual public void InitAwake()
+    virtual public void TestDebugPrompt()
     {
-
-    }
-    virtual public void InitStart()
-    {
-
-    }
-
-    virtual public void onEnable()
-    {
-        Debug.Log("onEnable");
-    }
-
-    virtual public void onDisable()
-    {
-        Debug.Log("onDisable");
-    }
-
-    virtual public void UpdateDo()
-    {
-
-    }
-
-    private void Update()
-    {
-        UpdateDo();
+        //battleManager.Test();
     }
 }
 

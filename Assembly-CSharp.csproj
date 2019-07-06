@@ -60,6 +60,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\02 Scripts\BattleScripts\Attacks\AttackB.cs" />
     <Compile Include="Assets\02 Scripts\BattleScripts\BattleCameraB.cs" />
     <Compile Include="Assets\02 Scripts\BattleScripts\BattleManagerB.cs" />
     <Compile Include="Assets\02 Scripts\BattleScripts\CharacterB.cs" />
