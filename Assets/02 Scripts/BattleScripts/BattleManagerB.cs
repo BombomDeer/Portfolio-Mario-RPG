@@ -4,25 +4,33 @@ using UnityEngine;
 
 public class BattleManagerB : MonoBehaviour
 {
-    enum attackNames
-    {
-
-    }
-
-    enum ePhase
+    enum eAttack
     {
         
     }
 
+    enum eTurnPhase
+    {
+        START,
+        MENU, ENEMYPICK,
+        TO_POSITIONS,
+        MINIGAME,
+        DAMAGE,
+        RETURN_TO_POSITION,
+        END
+    }
+
     
-    [SerializeField] List<CharacterB> characters = new List<CharacterB>(); //List of all characters 0 is always player
-    Dictionary<attackNames, AttackB> attacks;
+    public List<CharacterB> characters = new List<CharacterB>(); //List of all characters 0 is always player
+    Dictionary<eAttack, AttackB> attacks = new Dictionary<eAttack, AttackB>();
+    int curTurnNum = 0;
+    int numOfChar = 0;
+
     // Start is called before the first frame update
 
     private void Awake()
     {
-        CharactersInit();//First make a list of all characters on field
-        RollInitiative();
+        InitBattleManager();//initiates battlemanager, this includes everything that goes into initiating the battle manager    
     }
 
     void Start()
@@ -41,6 +49,12 @@ public class BattleManagerB : MonoBehaviour
     //    Debug.Log(tmpCount % 3);
     //}
 
+    void InitBattleManager()//initiates battlemanager, this includes everything that goes into initiating the battle manager   
+    {
+        CharactersInit();//calls the init function of all characters
+        numOfChar = characters.Count;
+    }
+
     void CharactersInit()//initiates all characters
     {
         for(int i = 0;i<characters.Count;i++)
@@ -49,8 +63,10 @@ public class BattleManagerB : MonoBehaviour
         }
     }
 
-    void RollInitiative()//Determines Turn order
-    {
+    //void RollInitiative()//Determines Turn order
+    //{
 
-    }
+    //}
+
+    
 }
