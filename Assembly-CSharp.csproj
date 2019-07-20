@@ -72,10 +72,16 @@
     <Compile Include="Assets\02 Scripts\TeacherScripts\Animanager.cs" />
     <Compile Include="Assets\02 Scripts\TeacherScripts\Character.cs" />
     <Compile Include="Assets\02 Scripts\TeacherScripts\HeadLaser.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\Inventory.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\InventorySlot.cs" />
     <Compile Include="Assets\02 Scripts\TeacherScripts\Mob.cs" />
     <Compile Include="Assets\02 Scripts\TeacherScripts\Player.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\ResourceManager.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\SingleTon.cs" />
     <Compile Include="Assets\02 Scripts\TeacherScripts\Skill_1.cs" />
     <Compile Include="Assets\02 Scripts\TeacherScripts\ThirdPersonCamera.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\UI_Image.cs" />
+    <Compile Include="Assets\02 Scripts\TeacherScripts\UI_SkillIcon.cs" />
     <Compile Include="Assets\02 Scripts\TeacherScripts\UIAni.cs" />
     <Compile Include="Assets\02 Scripts\TeacherScripts\Utility.cs" />
     <Compile Include="Assets\02 Scripts\UtilityScripts\ReturnGlobalPosition.cs" />
