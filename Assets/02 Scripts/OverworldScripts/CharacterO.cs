@@ -4,10 +4,17 @@ using UnityEngine;
 
 public class CharacterO : MonoBehaviour
 {
-    protected Vector3 destination;
-    float moveSpeed;
-    float angleSpeed;
+    protected Vector3 lookAtPoint;
+    protected Vector3 moveToPoint;
+    float moveSpeed = 3.0f;
+    //float angleSpeed;
     Rect hurtBox;
+
+    enum State
+    {
+        idle,
+        moving,
+    }
 
     private void Awake()
     {
@@ -42,14 +49,22 @@ public class CharacterO : MonoBehaviour
 
     protected void Move()//moves the character towards the Vector3 destination set by the children class
     {
-        Debug.Log("Move");
-        Debug.Log(destination);
-        if (destination != transform.position)
+        //moveSpeed = 1.0f;
+        //Debug.Log("Move");
+        //Debug.Log(destination);
+        Vector3 tmpMoveToPoint = new Vector3();
+        //if (lookAtPoint != transform.position)
+        if(Vector3.Distance(transform.position, lookAtPoint)>0.7)
         {
-            //transform.position.Set(transform.position.x + destination.normalized.x * moveSpeed * Time.deltaTime,
-            //    transform.position.y, transform.position.z + destination.normalized.z * moveSpeed * Time.deltaTime);
-            Vector3.MoveTowards(transform.position, destination, moveSpeed*Time.deltaTime);
-            transform.LookAt(destination);
+            tmpMoveToPoint.Set(transform.position.x + (moveToPoint.normalized.x * moveSpeed * Time.deltaTime),
+              transform.position.y, transform.position.z + (moveToPoint.normalized.z * moveSpeed * Time.deltaTime));
+            transform.position = tmpMoveToPoint;
+            //transform.LookAt(lookAtPoint);
         }
+    }
+
+    protected void LookAtIt(Vector3 lookIt)
+    {
+        transform.LookAt(lookAtPoint);
     }
 }

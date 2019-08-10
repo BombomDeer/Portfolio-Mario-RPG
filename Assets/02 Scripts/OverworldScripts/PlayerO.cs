@@ -11,16 +11,19 @@ public class PlayerO : CharacterO
 
     protected override void UpdateDo()
     {
-        base.UpdateDo();        
+        base.UpdateDo();
         
         if (Input.anyKey)
         {
             MouseMovement();
             KeyboardMovement();
+            Move();
+            LookAtIt(lookAtPoint);
         }
         else
         {
-            destination = Vector3.zero;
+            lookAtPoint = Vector3.zero;
+            moveToPoint = Vector3.zero;
         }
     }
 
@@ -29,11 +32,10 @@ public class PlayerO : CharacterO
         Vector3 temp;
         if (Input.GetMouseButton(0))
         {
-            if (Utility.MousePick(ref destination))
+            if (Utility.MousePick(ref lookAtPoint))
             {
-                temp = destination;
-                destination.Set(temp.x - transform.position.x, temp.y - transform.position.y, temp.z - transform.position.z);
-                Move();
+                temp = lookAtPoint;
+                moveToPoint.Set(temp.x - transform.position.x, temp.y - transform.position.y, temp.z - transform.position.z);                
             }
             else
                 return;
@@ -45,30 +47,27 @@ public class PlayerO : CharacterO
     void KeyboardMovement()
     {
 
-        
-        if(Input.GetKey(KeyCode.UpArrow))
+        if (Input.GetKey(KeyCode.UpArrow))
         {
-            Debug.Log("Up");
-            //destination = Vector3.zero;
-            destination.z = 1;
+            moveToPoint.z = 1;
         }
         else if(Input.GetKey(KeyCode.DownArrow))
         {
-            
-            destination.z = -1;
+            moveToPoint.z = -1;
         }
 
         if (Input.GetKey(KeyCode.RightArrow))
         {
-            Debug.Log("Right");
-            destination.x = 1;
+            moveToPoint.x = 1;
         }
         else if (Input.GetKey(KeyCode.LeftArrow))
         {
-            destination.x = -1;
+            moveToPoint.x = -1;
         }
 
-        Debug.Log("KeyboardMovement");
-        Move();
+        lookAtPoint.Set(transform.position.x + moveToPoint.x,
+              transform.position.y, transform.position.z + moveToPoint.z);
+
+        //Debug.Log("KeyboardMovement");        
     }
 }
