@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class CharacterO : MonoBehaviour
 {
-    protected Vector3 lookAtPoint;
-    protected Vector3 moveToPoint;
-    float moveSpeed = 3.0f;
-    //float angleSpeed;
-    Rect hurtBox;
+    protected Vector3 lookAtPoint;//the point in space where the character will look at
+    protected Vector3 moveToPoint;//the point in space where the character will try to go to
+                                  //when using keyboard the move point will be like 1 away but when you click with your mouse it'll be where you clicked
+    float moveSpeed = 3.0f;//movement speed
+    //float angleSpeed;//as of yet unimplemented speed of the character turning to look at point
+    //Rect hurtBox;//this is the hurt/hitbox where characters touch or something
 
-    enum State
+    enum State//a list of movement states not implemented yet
     {
         idle,
         moving,
@@ -54,7 +55,7 @@ public class CharacterO : MonoBehaviour
         //Debug.Log(destination);
         Vector3 tmpMoveToPoint = new Vector3();
         //if (lookAtPoint != transform.position)
-        if(Vector3.Distance(transform.position, lookAtPoint)>0.7)
+        if(Vector3.Distance(transform.position, lookAtPoint)>0.7)//this is to get it to stop moving when close to the point
         {
             tmpMoveToPoint.Set(transform.position.x + (moveToPoint.normalized.x * moveSpeed * Time.deltaTime),
               transform.position.y, transform.position.z + (moveToPoint.normalized.z * moveSpeed * Time.deltaTime));

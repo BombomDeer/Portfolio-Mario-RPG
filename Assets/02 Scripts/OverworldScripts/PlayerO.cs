@@ -13,14 +13,14 @@ public class PlayerO : CharacterO
     {
         base.UpdateDo();
         
-        if (Input.anyKey)
+        if (Input.anyKey)//checks if anything is pressed at all
         {
-            MouseMovement();
-            KeyboardMovement();
-            Move();
+            MouseMovement();//sets where to go with mouse clicks
+            KeyboardMovement();//sets where to go with keyboard inputs
+            Move();//moves the character towards the point it'll move
             LookAtIt(lookAtPoint);
         }
-        else
+        else//if nothing is pressed it sets everything to zero
         {
             lookAtPoint = Vector3.zero;
             moveToPoint = Vector3.zero;
